@@ -3,9 +3,11 @@
 # 2. Design
 ## Backend
 ![alt text](./src/public/image/Screenshot%20from%202023-03-31%2012-14-09.png)
+
 - [Install MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 - Using username, password to login MySQL workbench (Optional)
-- Create database ![alt text](./src/public/image/Screenshot%20from%202023-03-31%2012-31-40.png)
+- Create database 
+![alt text](./src/public/image/Screenshot%20from%202023-03-31%2012-31-40.png)
 
 ## Frontend
 - Config folder save database information
@@ -16,6 +18,7 @@
 
 ### `npm start`
 ![alt text](./src/public/image/Screenshot%20from%202023-03-31%2012-39-43.png)
+
 Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
