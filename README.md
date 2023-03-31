@@ -7,6 +7,7 @@
 - [Install MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 - Using username, password to login MySQL workbench (Optional)
 - Create database 
+
 ![alt text](./src/public/image/Screenshot%20from%202023-03-31%2012-31-40.png)
 
 ## Frontend
