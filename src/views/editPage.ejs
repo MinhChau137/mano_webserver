@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <%- include('../components/head')%>
+        <title>Edit data</title>
+</head>
+
+<body>
+    <%- include('../components/menu')%>
+        <h1 class="title">Edit SFCs</h1>
+        <div class="container">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Node</th>
+                        <th scope="col">Port</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <% for(let i=0; i < data.length; i++) { %>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ID SFC:
+                                <%=data[i].idSFC%>
+                            </th>
+                            <th scope="col">
+                            </th>
+                            <th scope="col">
+                            </th>
+                            <th scope="col">
+                                <a href="/deleteSFC?idsfc=<%=data[i].idSFC%>" class="btn btn-group btn-dark">Delete</a>
+                                <a href="/editSFC?idsfc=<%=data[i].idSFC%>" class="btn btn-group btn-dark">Edit</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data[i].services.split(",").forEach((element,index) => { %>
+                            <tr>
+                                <th scope="row">
+                                    <%=index+1%>
+                                </th>
+                                <td>
+                                    <%=element%>
+                                </td>
+                                <td>
+                                    <%=data[i].node.split( ",")[index]%>
+                                </td>
+                                <td>
+                                    <%=JSON.parse(data[i].port)[element]%>
+                                </td>
+                                <td>
+                                    <a href="/deleteService?idsfc=<%=data[i].idSFC%>&namesv=<%=element%>" class="btn btn-light btn-circle btn"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                    <% } %>
+            </table>
+        </div>
+        <%- include('../components/scriptBootstrap')%>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "mano",
+        "password": "Mothaiba@123",
+        "database": "SFCs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "mano",
+        "password": "Mothaiba@123",
+        "database": "SFCs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "mano",
+        "password": "Mothaiba@123",
+        "database": "SFCs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

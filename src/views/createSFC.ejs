@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head')%>
+        <title>Create</title>
+</head>
+
+<body>
+    <%- include('../components/menu')%>
+        <div class="create-container container" id="create">
+            <div class="createSFC container">
+                <h1 class="title">Create service</h1>
+                <form action="/postSFC" method="post">
+                    <div class="form-group">
+                        <label for="idsfc">ID SFC</label>
+                        <!-- <input type="text" class="form-control" id="idsfc" placeholder="String 11 letters" name="idsfc"> -->
+                        <div class="dropdown">
+                            <input class="dropdown-toggle form-control" id="idsfc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="String 11 letters" name="idsfc">
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <%data.forEach((ele, index)=>{%>
+                                    <span class="dropdown-item" onclick=setData(this)><%=ele.idSFC%></span>
+                                    <% })%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="service1">Service</label>
+                            <input type="text" class="form-control" id="service1" placeholder="name service" name="service" onclick=handleData(this)>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="node1">Node</label>
+                            <input type="text" class="form-control" id="node1" placeholder="Node" name="node">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="port1">Port</label>
+                            <input type="text" class="form-control" id="port1" placeholder="port" name="port">
+                        </div>
+                    </div>
+                    <div class="information" id="informationAdd">
+
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="route">Route</label>
+                        <input type="text" class="form-control" id="route" placeholder="route" name="route">
+                    </div> -->
+                    <div class="button" id="button">
+                        <div class="btn btn-success" id="buttonAdd" onclick=addService()><i class="fas fa-plus"></i></div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <%- include('../components/scriptBootstrap')%>
+            <script>
+                const setData = (e) => {
+                    document.getElementById("idsfc").value = e.innerHTML;
+                };
+                const addService = () => {
+                    let show = `
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="service1">Service</label>
+                                <input type="text" class="form-control" id="service1" placeholder="name service" name="service">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="node1">Node</label>
+                                <input type="text" class="form-control" id="node1" placeholder="Node" name="node">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="port1">Port</label>
+                                <input type="text" class="form-control" id="port1" placeholder="port" name="port">
+                            </div>
+                            <div class="form-group col-md-1" id="buttonDel">
+                                <label for="buttonDel">Delete</label>
+                                <div class="btn btn-danger" onclick=delSv()><i class="fas fa-minus"></i></div>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById("informationAdd").innerHTML += show;
+                }
+                const delSv = () => {
+                    document.getElementById("buttonDel").parentNode.remove();
+                }
+            </script>
+</body>
+
+</html>
